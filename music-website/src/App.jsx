@@ -6,6 +6,7 @@ import About from './components/About';
 import Shows from './components/Shows';
 import Music from './components/Music'
 import NavBar from './components/NavBar';
+import Videos from './components/Videos';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/about' element={<About/>}></Route>
         <Route path='/shows' element={<Shows/>}></Route>
         <Route path='/music' element={<Music/>}></Route>
+        <Route path='/videos' element={<Videos/>}></Route>
       </Routes>
     </div>
   );
