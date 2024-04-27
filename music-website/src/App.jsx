@@ -5,12 +5,13 @@ import Bio from './components/Bio';
 import About from './components/About';
 import Shows from './components/Shows';
 import Music from './components/Music'
+import NavBar from './components/NavBar';
 import './App.css';
 
 function App() {
   return (
     <div >
-      <h1>HELLO!</h1>
+      <NavBar/>
       <Routes>
         <Route path='/' element= {<Home/>}></Route>
         <Route path='/bio' element= {<Bio/>}></Route>
