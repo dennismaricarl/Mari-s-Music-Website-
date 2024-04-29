@@ -17,7 +17,6 @@ const NavBar = () => {
             <br/>
                 <Tabs centered>
                     <Tab label="Bio" onClick={() => navigate('/bio')} />
-                    <Tab label="Music" onClick={() => navigate('/music')} />
                     <Tab label="Videos" onClick={() => navigate('/videos')} />
                     <Tab label="Shows" onClick={() => navigate('/shows')} />
                     <Tab label="Gallery" onClick={() => navigate('/gallery')}/>
