@@ -13,12 +13,9 @@ const NavBar = () => {
         <>
            
             <Box sx={{ width: '100%', alignItems: "center", marginTop:'50px'}}>
-            <Typography style={{ fontFamily: 'Georgia', fontWeight: 'bold', fontSize: '40px', textAlign: "center" }}>m a r i</Typography>
+            <Typography onClick={() => navigate('/')}style={{ fontFamily: 'Georgia', fontWeight: 'bold', fontSize: '40px', textAlign: "center" }}>m a r i</Typography>
             <br/>
-                <Tabs 
-                indicatorColor="secondary"
-                textColor="inherit"
-                    centered>
+                <Tabs centered>
                     <Tab label="Bio" onClick={() => navigate('/bio')} />
                     <Tab label="Music" onClick={() => navigate('/music')} />
                     <Tab label="Videos" onClick={() => navigate('/videos')} />

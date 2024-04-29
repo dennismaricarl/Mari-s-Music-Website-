@@ -1,7 +1,15 @@
+import { React, useState } from "react";
+import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
+
+
+
 const Home = () => {
-    return(
+    return (
         <>
-        <h1>Home Page</h1>
+            {/* <FavoriteRoundedIcon className="heart" style={{ color: "black", display: "block", margin: "auto" }} /> */}
+            <div style={{ display: "flex" }} className="cover-container">
+                <img src="./images/cover.jpg" style={{ margin: "auto", marginTop:"30px"}} />
+            </div>
         </>
     )
 }

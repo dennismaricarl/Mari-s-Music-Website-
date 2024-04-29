@@ -1,0 +1,6 @@
+.cover-container:hover {
+    content: url('../public/images/colored.png');
+    display: flex;
+    margin: auto;
+    margin-top: 30px;
+}
