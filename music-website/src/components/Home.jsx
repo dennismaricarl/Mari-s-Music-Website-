@@ -10,6 +10,7 @@ const Home = () => {
             <div style={{ display: "flex" }} className="cover-container">
                 <img src="./images/cover.jpg" style={{ margin: "auto", marginTop:"30px"}} />
             </div>
+
         </>
     )
 }

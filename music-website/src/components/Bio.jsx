@@ -14,7 +14,6 @@ const Bio = () => {
 
     return (
         <>
-            <img className="bioPhoto1" src="/images/about1.png" />
             <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
 
                 <Button onClick={()=> handleClick("https://shoutoutla.com/meet-mari-dennis-singer-songwriter-indie-artist-producer")}>
