@@ -1,11 +1,16 @@
-.cover-container:hover {
+.cover {
+    display: flex;
+    margin: auto;
+}
+
+.cover:hover{
     content: url('../public/images/colored.png');
     display: flex;
     margin: auto;
     margin-top: 30px;
 }
 
-.bioPhoto1{
+.bioPhoto1 {
     display: flex;
     max-height: 70%;
     max-width: 70%;
@@ -14,6 +19,23 @@
 
 }
 
-.button{
-    background-color:red;
+.container {
+    margin: 30px 50px;
 }
+
+.socials {
+    display: flex;
+    justify-content: right;
+    margin: 10px;
+
+}
+
+.icon {
+    padding: 2px;
+}
+
+.icon:hover {
+    transform: scale(1.4);
+    transition: transform 0.3s ease;
+}
+
