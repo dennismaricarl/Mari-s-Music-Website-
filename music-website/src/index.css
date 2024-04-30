@@ -1,3 +1,5 @@
+/* Home Page */
+
 .cover {
     display: flex;
     margin: auto;
@@ -39,6 +41,7 @@
     transition: transform 0.3s ease;
 }
 
+/* Video Page   */
 
 .videos-container {
     display: flex;
