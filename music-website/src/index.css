@@ -1,4 +1,4 @@
-/* Home Page */
+/* ------ Home Page ------ */
 
 .cover {
     display: flex;
@@ -21,7 +21,7 @@
 
 }
 
-.container {
+.navBar-container {
     margin: 30px 50px;
 }
 
@@ -41,7 +41,7 @@
     transition: transform 0.3s ease;
 }
 
-/* Video Page   */
+/* ------ Video Page ------  */
 
 .videos-container {
     display: flex;
@@ -55,3 +55,35 @@
     padding: 20px;
 }
 
+
+/* ------ Gallery Page ------ */
+
+
+.carousel-container {
+    display: flex;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    transition: scroll 0.3ms ease-in-out;
+}
+
+.carousel-photo{
+    width: 50rem;
+    height: 40rem;
+    padding: 20px;
+    border-radius: 2rem;
+}
+
+
+.arrowRight {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-bottom: 60px;
+}
+
+.arrowLeft{
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    margin-bottom: 60px;
+}

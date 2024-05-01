@@ -6,6 +6,7 @@ import Shows from './components/Shows';
 import NavBar from './components/NavBar';
 import Videos from './components/Videos';
 import Gallery from './components/Gallery';
+import Releases from './components/Releases'
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/shows' element={<Shows/>}></Route>
         <Route path='/videos' element={<Videos/>}></Route>
         <Route path='/gallery' element={<Gallery/>}></Route>
+        <Route path='/releases' element={<Releases/>}></Route>
       </Routes>
     </div>
   );

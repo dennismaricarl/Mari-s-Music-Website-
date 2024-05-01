@@ -17,7 +17,7 @@ const NavBar = () => {
         window.location.href = link
     }
     return (
-        <div className="container">
+        <div className="navBar-container">
 
             <div className="socials">
                 <YouTubeIcon className="icon" style={{ fontSize: '2em' }} onClick={() => navigateToSocial('https://www.youtube.com/@maridennis7760')} />
@@ -26,14 +26,15 @@ const NavBar = () => {
                 <MailOutlineSharpIcon className="icon" style={{ fontSize: '2em' }} onClick={() => navigateToSocial("mailto:dennismaricarl@gmail.com")} />
                 <img className="icon" style={{ width: "26px", padding: "3px" }} src="./images/spotify.svg" onClick={() => navigateToSocial('https://open.spotify.com/artist/4bfvD66aV5w15gjI3LyQoZ?si=ISHga8SYTRGsvdqUu1EwbA&nd=1&dlsi=f555802cefec4cd4')}></img>
             </div>
-            <Box sx={{ width: '100%', alignItems: "center", marginTop: '50px' }}>
+            <Box>
                 <Typography onClick={() => navigate('/')} style={{ fontFamily: 'Georgia', fontWeight: 'bold', fontSize: '40px', textAlign: "center" }}>m a r i</Typography>
                 <br />
                 <Tabs centered>
                     <Tab label="Bio" onClick={() => navigate('/bio')} />
                     <Tab label="Videos" onClick={() => navigate('/videos')} />
-                    <Tab label="Shows" onClick={() => navigate('/shows')} />
                     <Tab label="Gallery" onClick={() => navigate('/gallery')} />
+                    <Tab label="Releases" onClick={() => navigate('/releases')}/>
+                    <Tab label="Shows" onClick={() => navigate('/shows')} />
                 </Tabs>
             </Box>
         </div>
