@@ -11,17 +11,7 @@ const releasesData = [
     {   id:2,
         imageURL: './images/theNextChapter.png',
         description: 'Description HERE'
-    },
-    {   id:3,
-        imageURL: './images/holdMeAgain.png',
-        description: 'Description HERE'
-    },
-    {   id:4,
-        imageURL: './images/holdMeAgain.png',
-        description: 'Description HERE'
-    },
-
-
+    }
 
 ]
 

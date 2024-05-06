@@ -27,25 +27,19 @@ const ExpandMore = styled((props) => {
 
 function Releases() {
     const [expanded, setExpanded] = useState(false);
-    const [releases, setRelease] = useState([])
 
-    const handleExpandClick = (id) => {
-        const releases = releasesData.find((release) => release.id == id)
-        setRelease(releases.id)
-        if (releases){
+
+    const handleClick = (id) => {
+        const singleRelease = releasesData.find((release) => release.id === id)
+        console.log(singleRelease)
         setExpanded(!expanded)
-        }
-            
-         
-        }
-        
-
+    }
 
     return (
         <div style={{ margin: '40px', display: 'flex', justifyContent:'center'}}>
-            {releasesData.map((release) => (
+            {releasesData.map((release, id) => (
 
-                <Card key={release.id} sx={{ maxWidth: 345, margin: 4}}>
+                <Card key={id} sx={{ maxWidth: 345, margin: 4}}>
                     <CardMedia
                         component="img"
                         height="300"
@@ -58,22 +52,29 @@ function Releases() {
                         <IconButton aria-label="listen here">
                             <FavoriteIcon />
                         </IconButton>
+                        
                         <ExpandMore
-                            expand={expanded}
-                            onClick={() => handleExpandClick(release.id)}
-                            aria-expanded={expanded}
+                            
+                            onClick={() => handleClick(release.id)}
                             aria-label="show more"
+                            expand={expanded }
                         >
+                          
                             <ExpandMoreIcon />
+                        
                         </ExpandMore>
+              
                     </CardActions>
-                    <Collapse in={expanded} timeout="auto" unmountOnExit>
+
+
+                    <Collapse  in={expanded}>
                         <CardContent>
                             <Typography fontFamily={'Georgia'}>
                                 {release.description}
                             </Typography>
                         </CardContent>
                     </Collapse>
+                
                 </Card>
 
 
@@ -85,5 +86,4 @@ function Releases() {
 
     )
 }
-
 export default Releases;
