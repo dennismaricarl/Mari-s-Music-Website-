@@ -1,7 +1,6 @@
 import { React, useState } from 'react';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
@@ -11,6 +10,12 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import releasesData from '../releasesData';
+import PlayCircleOutlinedIcon from '@mui/icons-material/PlayCircleOutlined';
+import PauseCircleOutlineOutlinedIcon from '@mui/icons-material/PauseCircleOutlineOutlined';
+import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
+
+
+
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -26,55 +31,61 @@ const ExpandMore = styled((props) => {
 
 
 function Releases() {
-    const [expanded, setExpanded] = useState(false);
 
+    const [play, setPlay] = useState(false);
+    const [audio, setAudio] = useState(null);
+    const [heartClicks, setHeartClicks] = useState([]);
 
-    const handleClick = (id) => {
-        const singleRelease = releasesData.find((release) => release.id === id)
-        console.log(singleRelease)
-        setExpanded(!expanded)
+    const playPause = (audioURL) => {
+        if (!play) {
+            const newAudio = new Audio(audioURL);
+            newAudio.play();
+            setAudio(newAudio);
+            setPlay(true);
+        } else {
+            audio.pause();
+            setPlay(false);
+        }
     }
 
+    const handleHeart = (id) => {
+        if(heartClicks.includes(id)) { // if id is already in array, heart has been clicked
+            setHeartClicks(heartClicks.filter((clickedId) => clickedId !== id)); //so remove it 
+        } else {
+            setHeartClicks([...heartClicks, id]); // if id not in array yet, heart hasn't been clicked, so include it!
+        }
+    };
+
+
     return (
-        <div style={{ margin: '40px', display: 'flex', justifyContent:'center'}}>
+        <div style={{ margin: '40px', display: 'flex', justifyContent: 'center' }}>
             {releasesData.map((release, id) => (
 
-                <Card key={id} sx={{ maxWidth: 345, margin: 4}}>
+                <Card key={id} sx={{ maxWidth: 345, margin: 4 }}>
                     <CardMedia
                         component="img"
                         height="300"
                         image={release.imageURL}
                         alt="album cover image"
                     />
+
                     <CardContent>
-                    </CardContent>
-                    <CardActions disableSpacing>
-                        <IconButton aria-label="listen here">
-                            <FavoriteIcon />
-                        </IconButton>
-                        
-                        <ExpandMore
+                        <div style={{ display: 'flex' }}>
+                            <div onClick={() => playPause(release.audioURL)}>
+                                {play ?
+                                    <PauseCircleOutlineOutlinedIcon className="playPause" />
+                                    : <PlayCircleOutlinedIcon className="playPause" />}
+                            </div>
+                            <ShareOutlinedIcon className="playPause" onClick={() => window.location.href = (release.linkfire)} />
+                            <FavoriteIcon 
+                            style={{padding: '4px'}}
+                            onClick={() => handleHeart(release.id)}
+                            className={heartClicks.includes(release.id) ? "redHeart" : "blackHeart"}
                             
-                            onClick={() => handleClick(release.id)}
-                            aria-label="show more"
-                            expand={expanded }
-                        >
-                          
-                            <ExpandMoreIcon />
-                        
-                        </ExpandMore>
-              
-                    </CardActions>
+                            />
+                        </div>
+                    </CardContent>
 
-
-                    <Collapse  in={expanded}>
-                        <CardContent>
-                            <Typography fontFamily={'Georgia'}>
-                                {release.description}
-                            </Typography>
-                        </CardContent>
-                    </Collapse>
-                
                 </Card>
 
 

@@ -86,3 +86,29 @@
     right: 50%;
     margin-bottom: 60px;
 }
+
+/* Releases Page */
+
+.playPause{
+    padding: 4px;
+}
+
+.playPause:hover {
+    color:rgb(180, 22, 22);
+    transform: scale(1.2)
+}
+
+.redHeart {
+    color: rgb(180, 22, 22);
+}
+
+.redHeart:hover {
+    transform: scale(1.2);
+}
+
+.blackHeart{
+    color:black; 
+}
+.blackHeart:hover {
+    transform: scale(1.2);
+}
