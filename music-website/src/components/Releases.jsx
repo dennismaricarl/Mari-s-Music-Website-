@@ -15,7 +15,7 @@ function Releases() {
 
     const [audio, setAudio] = useState(null);
     const [heartClicks, setHeartClicks] = useState({});
-    const [card, setCardClicked] = useState({})
+    const [expandedCards, setExpandedCards] = useState({});
     const [played, setPlayed] = useState({})
 
 
@@ -48,28 +48,27 @@ function Releases() {
 
 
     const handleTag = (id) => {
-        setCardClicked((cards) => {
+        setExpandedCards((cards) => {
             const cardsList = { ...cards }; // make a copy of current state to make sure we dont mutate the original state
             cardsList[id] = !cardsList[id]; //toggle state of clicked card. set true to false and vice versa. 
             return cardsList;  // returns updated cardList object 
         });
     };
 
-
+   
     return (
-        <div style={{ margin: '40px', display: 'flex', justifyContent: 'center' }}>
+        <div className="releases">
             {releasesData.map((release, id) => (
 
                 <Card key={id} sx={{ maxWidth: 345, margin: 4 }}>
-
-                    <CardMedia 
+                    
+                    <CardMedia className="image"
                         component="img"
                         height="300"
                         image={release.imageURL}
                         alt="album cover image"
                     />
-
-
+                 
                     <CardContent>
                         <div style={{ display: 'flex' }}>
                             <div onClick={() => playPause(id, release.audioURL)}>
@@ -86,7 +85,7 @@ function Releases() {
                             />
                             <button style={{ border: 'none', backgroundColor: 'white' }} onClick={() => handleTag(id)}>
                                 <TagIcon className='icons' />
-                                {card[id] ? (
+                                {expandedCards[id] ? (
                                     <div style={{ display: 'flex', textAlign: 'left', fontFamily: 'Georgia' }}>{release.description}</div>) : null
                                 }
                             </button>

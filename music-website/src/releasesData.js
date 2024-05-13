@@ -22,13 +22,21 @@ const releasesData = [
     {
         id: 3,
         imageURL: './images/Daydreaming.png',
-        description: <p>This was the first song I ever released in 2018!🥺</p>,
+        description: <p>This was the first song I ever released in 2018!🥺 The audio is a voice memo I recorded on my iphone that I sent the producer.</p>,
+        audioURL: './audio/Daydreaming.mp3',
         linkfire: 'https://lnkfi.re/daydreamiing'
     },
     {
         id: 4,
         imageURL: './images/idwlyd.png',
-        description: <p></p>,
+        description: <p>𝚝𝚑𝚒𝚜 𝚜𝚘𝚗𝚐 𝚒𝚜 𝚟𝚎𝚛𝚢 𝚍𝚎𝚊𝚛 𝚝𝚘 𝚖𝚢 𝚑𝚎𝚊𝚛𝚝. 𝙴𝚡𝚌𝚒𝚝𝚎𝚍 𝚝𝚘 𝚜𝚑𝚊𝚛𝚎 𝚠𝚒𝚝𝚑 𝚢𝚘𝚞!
+        𝚜𝚙𝚎𝚌𝚒𝚊𝚕 𝚝𝚑𝚊𝚗𝚔𝚜 𝚝𝚘 𝚖𝚢 𝚌𝚘𝚕𝚕𝚊𝚋𝚘𝚛𝚊𝚝𝚘𝚛𝚜:
+        𝚙𝚛𝚘𝚍𝚞𝚌𝚝𝚒𝚘𝚗&𝚟𝚘𝚌𝚊𝚕𝚜 : @𝐡𝐚𝐲𝐝𝐞𝐧𝐚𝐫𝐩𝐦𝐮𝐬𝐢𝐜
+        ❣︎
+        𝚖𝚒𝚡/𝚖𝚊𝚜𝚝𝚎𝚛: @𝐬𝐨𝐮𝐧𝐝𝐭𝐫𝐚𝐜𝐤𝐜𝐫𝐞𝐚𝐭𝐢𝐨𝐧
+        ❣︎
+        𝚌𝚘𝚟𝚎𝚛 𝚊𝚛𝚝: 𝚖𝚢 𝚝𝚠𝚒𝚗❦❦ @𝐚𝐦𝐚𝐭𝐞𝐮𝐫.𝐬𝐤𝐞𝐭𝐜𝐡𝐞𝐫
+        </p>,
         audioURL: './audio/idwlyd.mp3',
         linkfire: 'https://lnkfi.re/idwlyd'
     },
@@ -37,7 +45,7 @@ const releasesData = [
         imageURL: './images/alwaysYours.png',
         description: <p>I’m happy to announce the re-release of “always yours” with @disrupcionrecords⚡️</p>,
         audioURL: './audio/AlwaysYours.mp3',
-        // linkfire: 'https://lnkfi.re/idwlyd'
+        linkfire: 'https://lnkfi.re/holdmeagain'
     }
 
 
