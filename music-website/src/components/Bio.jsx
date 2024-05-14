@@ -1,43 +1,29 @@
-import { Button } from "@mui/material";
+import Typography from '@mui/material/Typography'
+import BioData from './BioData';
 
 const Bio = () => {
 
-    const imageStyle = {
-        width: "40rem",
-        height: "60rem",
-        margin: "20px"
+    const handleClick = (url) => {
+        window.location.href = url
     }
-
-    const handleClick = (link) => {
-       window.location.href = link
-    };
 
     return (
         <>
-            <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
+            {BioData.map((article) => (
+                <div style={{ display: 'flex' }}>
 
-                <Button onClick={()=> handleClick("https://shoutoutla.com/meet-mari-dennis-singer-songwriter-indie-artist-producer")}>
-                <img  style={imageStyle} src="/images/about5.png" />
-                </Button>
+                    <Typography className='article-title'
+                        onClick={() => handleClick(article.articleURL)}
+                        style={{ fontWeight: 'lighter', fontSize: '100px', marginLeft: '10%' }}>{article.title}
+                    </Typography>
 
-                <Button onClick={() => handleClick("https://soundtrack-creation.com/2021/06/artist-spotlight-mari-interview/")}>
-                <img style={imageStyle} src="/images/about2.png" />
-                </Button>
-               
-            </div>
+                    <img className='article-image' src={article.image} />
+                </div>
 
-            <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
-                <Button onClick={() => handleClick("https://www.anrfactory.com/tag/mari/")}>
-                <img style={imageStyle} src="/images/about4.png" />
-                </Button>
-
-                <Button onClick={()=> handleClick('https://voyagela.com/interview/meet-mari-dennis-mari-southbay/')}>
-                <img style={imageStyle} src="/images/about3.png" />
-                </Button>
-            </div>
-
+            ))}
         </>
     )
 }
+
 
 export default Bio;

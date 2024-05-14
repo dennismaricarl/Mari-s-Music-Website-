@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
-import Tooltip from '@mui/material/Tooltip';
+
 
 const Gallery = () => {
 
@@ -40,13 +40,11 @@ const Gallery = () => {
          <div className='carousel-container' ref={carouselRef}>
 
             {images.map((item, id) =>
-               <Tooltip arrow='true' title="jdkalfdf" >
-                  <img
-                     key={id}
-                     className='carousel-photo'
-                     src={item.photo}>
-                  </img>
-               </Tooltip>
+               <img
+                  key={id}
+                  className='carousel-photo'
+                  src={item.photo}>
+               </img>
             )}
          </div>
          <ArrowCircleLeftOutlinedIcon

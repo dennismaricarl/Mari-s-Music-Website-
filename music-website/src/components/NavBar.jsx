@@ -27,14 +27,14 @@ const NavBar = () => {
                 <img className="icon" style={{ width: "26px", padding: "3px" }} src="./images/spotify.svg" onClick={() => navigateToSocial('https://open.spotify.com/artist/4bfvD66aV5w15gjI3LyQoZ?si=ISHga8SYTRGsvdqUu1EwbA&nd=1&dlsi=f555802cefec4cd4')}></img>
             </div>
             <Box>
-                <Typography onClick={() => navigate('/')} style={{ fontFamily: 'Georgia', fontWeight: 'bold', fontSize: '40px', textAlign: "center" }}>m a r i</Typography>
+                <Typography className="mari" onClick={() => navigate('/')} style={{ fontFamily: 'Georgia', fontWeight: 'bold', fontSize: '40px', textAlign: "center" }}>m a r i</Typography>
                 <br />
                 <Tabs centered>
-                    <Tab label="Bio" onClick={() => navigate('/bio')} />
-                    <Tab label="Videos" onClick={() => navigate('/videos')} />
-                    <Tab label="Gallery" onClick={() => navigate('/gallery')} />
-                    <Tab label="Releases" onClick={() => navigate('/releases')}/>
-                    <Tab label="Shows" onClick={() => navigate('/shows')} />
+                    <Tab className="navBarTabs" label="Bio" onClick={() => navigate('/bio')} />
+                    <Tab className="navBarTabs" label="Videos" onClick={() => navigate('/videos')} />
+                    <Tab className="navBarTabs" label="Gallery" onClick={() => navigate('/gallery')} />
+                    <Tab className="navBarTabs" label="Releases" onClick={() => navigate('/releases')} />
+                    <Tab className="navBarTabs" label="Shows" onClick={() => navigate('/shows')} />
                 </Tabs>
             </Box>
         </div>
