@@ -68,9 +68,12 @@
 
 }
 
+.article-title {
+    padding-bottom: 8px;
+}
+
 .article-title:hover {
     border-bottom: 5px rgb(97, 92, 92) solid;
-
 }
 
 
@@ -157,3 +160,23 @@
 .image:hover {
     transform: rotate(0.8deg)
 }
+
+
+/* App.jsx */
+.app {
+    cursor: none;
+}
+
+.cursor-style {
+    background-color: black;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 100%;
+    transform-origin: 100% 100%;
+    transform: translate(-50%, -50%);
+    position: fixed; 
+    pointer-events: none;
+
+}
+/* position:fixed
+        - will stay in the same position even when user scrolls  */

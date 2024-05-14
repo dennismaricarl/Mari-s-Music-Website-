@@ -1,8 +1,10 @@
+import Typography from '@mui/material/Typography'
+
 const Shows = () => {
     return(
-        <>
-        <h1>Shows Page</h1>
-        </>
+      
+        <Typography style={{fontFamily:'Georgia', fontSize:'30px', display:'flex', justifyContent:'center', alignItems:'center', height:'50vh'}}>...coming soon</Typography>
+ 
     )
 }
 

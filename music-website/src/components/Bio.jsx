@@ -17,7 +17,7 @@ const Bio = () => {
                         style={{ fontWeight: 'lighter', fontSize: '100px', marginLeft: '10%' }}>{article.title}
                     </Typography>
 
-                    <img className='article-image' src={article.image} />
+                    <img onClick={() => handleClick(article.articleURL)} className='article-image' src={article.image} />
                 </div>
 
             ))}
