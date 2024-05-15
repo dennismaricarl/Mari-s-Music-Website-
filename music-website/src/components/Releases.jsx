@@ -4,39 +4,21 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import releasesData from '../releasesData';
-import PlayCircleOutlinedIcon from '@mui/icons-material/PlayCircleOutlined';
-import PauseCircleOutlineOutlinedIcon from '@mui/icons-material/PauseCircleOutlineOutlined';
-import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
-import TagIcon from '@mui/icons-material/Tag';
+import Button from '@mui/material/Button'
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
+import MailOutlineSharpIcon from '@mui/icons-material/MailOutlineSharp';
 
 
 
 function Releases() {
 
-    const [audio, setAudio] = useState(null);
+    const navigateToSocial = (link) => {
+        window.location.href = link
+    }
+
     const [heartClicks, setHeartClicks] = useState({});
-    const [expandedCards, setExpandedCards] = useState({});
-    const [played, setPlayed] = useState({})
-
-
-
-    const playPause = (id, audioURL) => {
-        setPlayed((playIDs) => {
-            const playList = { ...playIDs }
-            playList[id] = !playList[id]
-            return playList
-
-        })
-        if (!played[id]) {
-            const newAudio = new Audio(audioURL);
-            newAudio.play();
-            setAudio(newAudio);
-        } else {
-            audio.pause();
-
-        }
-    };
-
 
     const handleHeart = (id) => {
         setHeartClicks((hearts) => {
@@ -46,61 +28,48 @@ function Releases() {
         })
     };
 
-
-    const handleTag = (id) => {
-        setExpandedCards((cards) => {
-            const cardsList = { ...cards }; // make a copy of current state to make sure we dont mutate the original state
-            cardsList[id] = !cardsList[id]; //toggle state of clicked card. set true to false and vice versa. 
-            return cardsList;  // returns updated cardList object 
-        });
-    };
-
-   
     return (
-        <div className="releases">
-            {releasesData.map((release, id) => (
+        <>
 
-                <Card key={id} sx={{ maxWidth: 345, margin: 4 }}>
-                    
-                    <CardMedia className="image"
-                        component="img"
-                        height="300"
-                        image={release.imageURL}
-                        alt="album cover image"
-                    />
-                 
-                    <CardContent>
-                        <div style={{ display: 'flex' }}>
-                            <div onClick={() => playPause(id, release.audioURL)}>
-                                {played[id] ?
-                                    <PauseCircleOutlineOutlinedIcon className="icons" />
-                                    : <PlayCircleOutlinedIcon className="icons" />}
+            <div className="socials-releases">
+                <img className="icon-releases" style={{ width: "32px" }} src="./images/spotify.svg" onClick={() => navigateToSocial('https://open.spotify.com/artist/4bfvD66aV5w15gjI3LyQoZ?si=ISHga8SYTRGsvdqUu1EwbA&nd=1&dlsi=f555802cefec4cd4')}></img>
+                <InstagramIcon className="icon-releases" style={{ fontSize: '2em' }} onClick={() => navigateToSocial('https://www.instagram.com/maridennis93/')} />
+                <YouTubeIcon className="icon-releases" style={{ fontSize: '2em' }} onClick={() => navigateToSocial('https://www.youtube.com/@maridennis7760')} />
+                <FacebookOutlinedIcon className="icon-releases" style={{ fontSize: '2em' }} onClick={() => navigateToSocial('https://www.facebook.com/maricarl.dennis93')} />
+                <MailOutlineSharpIcon className="icon-releases" style={{ fontSize: '2em' }} onClick={() => navigateToSocial("mailto:dennismaricarl@gmail.com")} />
+            </div>
+
+            <div className='releases'>
+                {releasesData.map((release, id) => (
+
+
+                    <Card key={id} sx={{ maxWidth: 345, margin: 4 }}>
+
+                        <CardMedia className="image"
+                            component="img"
+                            height="300"
+                            image={release.imageURL}
+                            alt="album cover image"
+                        />
+
+                        <CardContent>
+                            <div style={{ display: 'flex' }}>
+                                <FavoriteIcon
+                                    style={{ padding: '4px', marginLeft: '0' }}
+                                    onClick={() => handleHeart(id)}
+                                    className={heartClicks[id] ? "redHeart" : "blackHeart"}
+
+                                />
+                                <Button color='error' variant='contained' size='small' sx={{ fontFamily: 'Lucida Sans', fontWeight: '200', marginLeft: '80px' }} onClick={() => window.location.href = (release.linkfire)} >listen </Button>
+
                             </div>
-                            <ShareOutlinedIcon className="icons" onClick={() => window.location.href = (release.linkfire)} />
-                            <FavoriteIcon
-                                style={{ padding: '4px' }}
-                                onClick={() => handleHeart(id)}
-                                className={heartClicks[id] ? "redHeart" : "blackHeart"}
+                        </CardContent>
 
-                            />
-                            <button style={{ border: 'none', backgroundColor: 'white' }} onClick={() => handleTag(id)}>
-                                <TagIcon className='icons' />
-                                {expandedCards[id] ? (
-                                    <div style={{ display: 'flex', textAlign: 'left', fontFamily: 'Georgia' }}>{release.description}</div>) : null
-                                }
-                            </button>
-                        </div>
-                    </CardContent>
+                    </Card>
+                ))}
+            </div>
 
-                </Card>
-
-
-            ))}
-
-
-        </div>
-
-
+        </>
     )
 }
 export default Releases;

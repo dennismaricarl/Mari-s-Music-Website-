@@ -10,6 +10,7 @@
     display: flex;
     margin: auto;
     margin-top: 30px;
+
 }
 
 .bioPhoto1 {
@@ -106,6 +107,8 @@
     height: 40rem;
     padding: 20px;
     border-radius: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+        0 1px 2px rgba(255, 255, 255, 0.24);
 }
 
 
@@ -116,11 +119,22 @@
     margin-bottom: 60px;
 }
 
+.arrowRight:hover {
+    background-color: rgb(221, 113, 113);
+    border-radius: 50%;
+}
+
+
 .arrowLeft {
     position: absolute;
     bottom: 0;
     right: 50%;
     margin-bottom: 60px;
+}
+
+.arrowLeft:hover {
+    background-color: rgb(221, 113, 113);
+    border-radius: 50%;
 }
 
 /* Releases Page */
@@ -161,6 +175,22 @@
     transform: rotate(0.8deg)
 }
 
+.socials-releases {
+    display: flex;
+    justify-content: center
+}
+
+.icon-releases {
+    margin: 5px;
+    padding: 10px;
+    border: 1px black solid;
+    border-style: ridge;
+    border-radius: 50%;
+}
+
+.icon-releases:hover {
+    transform: scale(1.2);
+}
 
 /* App.jsx */
 .app {
@@ -174,9 +204,10 @@
     border-radius: 100%;
     transform-origin: 100% 100%;
     transform: translate(-50%, -50%);
-    position: fixed; 
+    position: fixed;
     pointer-events: none;
 
 }
+
 /* position:fixed
         - will stay in the same position even when user scrolls  */

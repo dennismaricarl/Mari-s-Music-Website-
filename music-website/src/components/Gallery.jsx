@@ -1,6 +1,7 @@
-import { useRef, useState } from 'react';
+import { useRef} from 'react';
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
+import imagesData from './imagesData';
 
 
 const Gallery = () => {
@@ -12,17 +13,6 @@ const Gallery = () => {
    const carouselRef = useRef(null)
    const scrollAmount = 300;
 
-   const images = [
-      { photo: "/images/photo1.png" },
-      { photo: "/images/photo2.png" },
-      { photo: "/images/photo3.png" },
-      { photo: "/images/endUpWithYou.png" },
-      { photo: "/images/holdMeAgain.png" },
-      { photo: "/images/Ibelieved.jpg" },
-      { photo: "/images/nextChapter.png" },
-      { photo: "/images/setForLife.png" },
-      { photo: "/images/thatsWhenIKnew.png" },
-   ]
 
    return (
 
@@ -39,7 +29,7 @@ const Gallery = () => {
          />
          <div className='carousel-container' ref={carouselRef}>
 
-            {images.map((item, id) =>
+            {imagesData.map((item, id) =>
                <img
                   key={id}
                   className='carousel-photo'

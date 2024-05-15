@@ -19,11 +19,13 @@ function App() {
 
   return (
 
-       <div
-        className='app'
-        onMouseMove={changePosition}>
-        <div className='cursor-style' ref={cursor}></div>
+    <div
+      className='app'
+      onMouseMove={changePosition}>
+      <div className='cursor-style' ref={cursor}></div>
       <NavBar />
+
+
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/bio' element={<Bio />}></Route>

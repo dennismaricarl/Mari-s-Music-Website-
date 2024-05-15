@@ -1,11 +1,13 @@
-import { React} from "react";
-
+import { React } from "react";
 
 const Home = () => {
+
+
     return (
         <>
-                <img className='cover' src="./images/cover.jpg" style={{ margin: "auto", marginTop:"30px"}} />
+            <img className='cover' src="./images/cover.jpg" style={{ margin: "auto", marginTop: "30px" }} />
         </>
+
     )
 }
 
