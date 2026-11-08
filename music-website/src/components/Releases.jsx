@@ -32,7 +32,7 @@ function Releases() {
         <>
 
             <div className="socials-releases">
-                <img className="icon-releases" style={{ width: "32px" }} src="./images/spotify.svg" onClick={() => navigateToSocial('https://open.spotify.com/artist/4bfvD66aV5w15gjI3LyQoZ?si=ISHga8SYTRGsvdqUu1EwbA&nd=1&dlsi=f555802cefec4cd4')}></img>
+                <img className="icon-releases" style={{ width: "32px" }} src="./images/spotify.svg" alt="Spotify" onClick={() => navigateToSocial('https://open.spotify.com/artist/4bfvD66aV5w15gjI3LyQoZ?si=ISHga8SYTRGsvdqUu1EwbA&nd=1&dlsi=f555802cefec4cd4')}></img>
                 <InstagramIcon className="icon-releases" style={{ fontSize: '2em' }} onClick={() => navigateToSocial('https://www.instagram.com/maridennis93/')} />
                 <YouTubeIcon className="icon-releases" style={{ fontSize: '2em' }} onClick={() => navigateToSocial('https://www.youtube.com/@maridennis7760')} />
                 <FacebookOutlinedIcon className="icon-releases" style={{ fontSize: '2em' }} onClick={() => navigateToSocial('https://www.facebook.com/maricarl.dennis93')} />
@@ -43,13 +43,14 @@ function Releases() {
                 {releasesData.map((release, id) => (
 
 
-                    <Card key={id} sx={{ maxWidth: 345, margin: 4 }}>
+                    <Card key={id} sx={{ width: '100%', maxWidth: 345, margin: { xs: 2, sm: 4 } }}>
 
                         <CardMedia className="image"
                             component="img"
-                            height="300"
                             image={release.imageURL}
                             alt="album cover image"
+                            loading="lazy"
+                            sx={{ height: { xs: 'auto', sm: 300 }, aspectRatio: { xs: '1 / 1', sm: 'auto' } }}
                         />
 
                         <CardContent>

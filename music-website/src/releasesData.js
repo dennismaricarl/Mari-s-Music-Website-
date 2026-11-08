@@ -1,7 +1,7 @@
 const releasesData = [
     {
         id: 1,
-        imageURL: './images/holdMeAgain.png',
+        imageURL: './images/holdMeAgain.webp',
         description:
             <p>My first EP is finally out now! This first EP project is a dream..It was no small feat as an indie artist, an amateur at most things and a really sappy human being lol. These songs not only reveal
                 my share of heartaches but they also are reflective of some of my deepest longings.I hope these songs allow you to feel deeply, however your heart takes each of them, and inspire you in some way. Thank you for listening and sharing. Thank you for giving my songs
@@ -12,7 +12,7 @@ const releasesData = [
     },
     {
         id: 2,
-        imageURL: './images/theNextChapter.png',
+        imageURL: './images/theNextChapter.webp',
         description: <p>✨ the next chapter ✨ OUT NOW!!!!!!! 🤍🤍
             written/ produced by me. i tried okay. Haha
             mix/mastered by favorite engineer, Sefi Carmel @soundtrackcreation ⚡️⚡️⚡️thank you Sefi!</p>,
@@ -21,14 +21,14 @@ const releasesData = [
     },
     {
         id: 3,
-        imageURL: './images/Daydreaming.png',
+        imageURL: './images/Daydreaming.webp',
         description: <p>This was the first song I ever released in 2018!🥺 The audio is a voice memo I recorded on my iphone that I sent the producer.</p>,
         audioURL: './audio/Daydreaming.mp3',
         linkfire: 'https://lnkfi.re/daydreamiing'
     },
     {
         id: 4,
-        imageURL: './images/idwlyd.png',
+        imageURL: './images/idwlyd.webp',
         description: <p>𝚝𝚑𝚒𝚜 𝚜𝚘𝚗𝚐 𝚒𝚜 𝚟𝚎𝚛𝚢 𝚍𝚎𝚊𝚛 𝚝𝚘 𝚖𝚢 𝚑𝚎𝚊𝚛𝚝. 𝙴𝚡𝚌𝚒𝚝𝚎𝚍 𝚝𝚘 𝚜𝚑𝚊𝚛𝚎 𝚠𝚒𝚝𝚑 𝚢𝚘𝚞!
         𝚜𝚙𝚎𝚌𝚒𝚊𝚕 𝚝𝚑𝚊𝚗𝚔𝚜 𝚝𝚘 𝚖𝚢 𝚌𝚘𝚕𝚕𝚊𝚋𝚘𝚛𝚊𝚝𝚘𝚛𝚜:
         𝚙𝚛𝚘𝚍𝚞𝚌𝚝𝚒𝚘𝚗&𝚟𝚘𝚌𝚊𝚕𝚜 : @𝐡𝐚𝐲𝐝𝐞𝐧𝐚𝐫𝐩𝐦𝐮𝐬𝐢𝐜
@@ -42,7 +42,7 @@ const releasesData = [
     },
     {
         id: 5,
-        imageURL: './images/alwaysYours.png',
+        imageURL: './images/alwaysYours.webp',
         description: <p>I’m happy to announce the re-release of “always yours” with @disrupcionrecords⚡️</p>,
         audioURL: './audio/AlwaysYours.mp3',
         linkfire: 'https://lnkfi.re/holdmeagain'

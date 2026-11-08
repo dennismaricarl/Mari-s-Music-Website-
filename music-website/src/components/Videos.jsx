@@ -2,7 +2,15 @@ import { useState, React } from "react";
 import YouTube from 'react-youtube'
 import CircularProgress from '@mui/material/CircularProgress';
 
-
+const videoIds = [
+    'GF8ReFkWCso',
+    'EAZU0U13QmA',
+    'Zmcyp5AQOCs',
+    'hdymdwJJePA',
+    '0f33cKjDDTg',
+    'MGXc2NFojos',
+    '4GMXEzagHrI'
+]
 
 const Videos = () => {
 
@@ -26,33 +34,15 @@ const Videos = () => {
                 </div>
             )}
             <div className="videos-container">
-                <YouTube className="video"
-                    videoId='GF8ReFkWCso'
-                    onReady={loaded}
-                />
-                <YouTube className="video"
-                    videoId="EAZU0U13QmA"
-                    onReady={loaded}
-                />
-                <YouTube className="video"
-                    videoId="Zmcyp5AQOCs"
-                    onReady={loaded}
-                />
-                <YouTube className="video"
-                    videoId="hdymdwJJePA"
-                    onReady={loaded}
-                />
-                <YouTube className="video"
-                    videoId="0f33cKjDDTg"
-                />
-                <YouTube className="video"
-                    videoId="MGXc2NFojos"
-                    onReady={loaded}
-                />
-                <YouTube className="video"
-                    videoId="4GMXEzagHrI"
-                    onReady={loaded}
-                />
+                {videoIds.map((id) => (
+                    <YouTube
+                        key={id}
+                        className="video"
+                        videoId={id}
+                        opts={{ width: '100%', height: '100%' }}
+                        onReady={loaded}
+                    />
+                ))}
             </div>
         </>
     )

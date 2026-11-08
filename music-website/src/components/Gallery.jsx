@@ -11,39 +11,43 @@ const Gallery = () => {
    //a ref is created using the useRef hook. 
 
    const carouselRef = useRef(null)
-   const scrollAmount = 300;
+
+   // scroll by exactly one photo so the carousel always lands on a photo,
+   // whatever the screen size
+   const scrollByPhoto = (direction) => {
+      const container = carouselRef.current
+      const firstPhoto = container.firstElementChild
+      const amount = firstPhoto ? firstPhoto.offsetWidth : container.clientWidth
+      container.scrollBy({ left: direction * amount, behavior: 'smooth' })
+   }
 
 
    return (
 
-      <div>
-         <ArrowCircleRightOutlinedIcon
-            className="arrowRight"
-            onClick={() => {
-               //refers to the DOM node of the carousel container div
-               //by accessing scrollLeft, we can scroll the content horizontally
-               const container = carouselRef.current
-               container.scrollLeft += scrollAmount
-
-            }}
-         />
+      <div className="gallery">
          <div className='carousel-container' ref={carouselRef}>
 
             {imagesData.map((item, id) =>
                <img
                   key={id}
                   className='carousel-photo'
-                  src={item.photo}>
+                  src={item.photo}
+                  alt={`Mari gallery ${id + 1}`}
+                  loading={id < 2 ? 'eager' : 'lazy'}
+                  decoding="async">
                </img>
             )}
          </div>
-         <ArrowCircleLeftOutlinedIcon
-            className="arrowLeft"
-            onClick={() => {
-               const container = carouselRef.current
-               container.scrollLeft -= scrollAmount
-            }}
-         />
+         <div className="gallery-controls">
+            <ArrowCircleLeftOutlinedIcon
+               className="arrowLeft"
+               onClick={() => scrollByPhoto(-1)}
+            />
+            <ArrowCircleRightOutlinedIcon
+               className="arrowRight"
+               onClick={() => scrollByPhoto(1)}
+            />
+         </div>
       </div>
 
 
@@ -51,4 +55,3 @@ const Gallery = () => {
 }
 
 export default Gallery;
-

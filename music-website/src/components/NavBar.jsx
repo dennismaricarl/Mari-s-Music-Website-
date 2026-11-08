@@ -20,7 +20,7 @@ const NavBar = () => {
         <div className="navBar-container">
 
             <div className="socials">
-                <img className="icon" style={{ width: "26px", padding: "3px" }} src="./images/spotify.svg" onClick={() => navigateToSocial('https://open.spotify.com/artist/4bfvD66aV5w15gjI3LyQoZ?si=ISHga8SYTRGsvdqUu1EwbA&nd=1&dlsi=f555802cefec4cd4')}></img>
+                <img className="icon" style={{ width: "26px", padding: "3px" }} src="./images/spotify.svg" alt="Spotify" onClick={() => navigateToSocial('https://open.spotify.com/artist/4bfvD66aV5w15gjI3LyQoZ?si=ISHga8SYTRGsvdqUu1EwbA&nd=1&dlsi=f555802cefec4cd4')}></img>
                 <InstagramIcon className="icon" style={{ fontSize: '2em' }} onClick={() => navigateToSocial('https://www.instagram.com/maridennis93/')} />
                 <YouTubeIcon className="icon" style={{ fontSize: '2em' }} onClick={() => navigateToSocial('https://www.youtube.com/@maridennis7760')} />
                 <FacebookOutlinedIcon className="icon" style={{ fontSize: '2em' }} onClick={() => navigateToSocial('https://www.facebook.com/maricarl.dennis93')} />
@@ -29,7 +29,7 @@ const NavBar = () => {
             <Box>
                 <Typography className="mari" onClick={() => navigate('/')} style={{ fontFamily: 'Georgia', fontWeight: 'bold', fontSize: '40px', textAlign: "center" }}>m a r i</Typography>
                 <br />
-                <Tabs centered>
+                <Tabs variant="scrollable" scrollButtons={false}>
                     <Tab className="navBarTabs" label="Bio" onClick={() => navigate('/bio')} />
                     <Tab className="navBarTabs" label="Videos" onClick={() => navigate('/videos')} />
                     <Tab className="navBarTabs" label="Gallery" onClick={() => navigate('/gallery')} />
